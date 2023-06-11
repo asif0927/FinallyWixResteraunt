@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {AppBar,Toolbar,Typography,IconButton,Drawer,List,ListItem,ListItemText,Divider,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import style from './index.module.css';
 
@@ -16,6 +17,10 @@ function Header() {
     if (window.innerWidth <= 890) {
       setIsDrawerOpen(false);
     }
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
   };
 
   useEffect(() => {
@@ -40,11 +45,11 @@ function Header() {
           style={{
             width: '80%',
             margin: '0 auto',
-            display: windowWidth <= 901 ? 'none' : 'inline', 
+            display: windowWidth <= 901 ? 'none' : 'inline',
           }}
         >
-          <Toolbar >
-            <div className={style.desktopLinks}>
+          <Toolbar>
+            <div>
               <Link to="/" className={style.link} onClick={handleLinkClick}>
                 Home
               </Link>
@@ -72,29 +77,34 @@ function Header() {
           aria-label="menu"
           onClick={toggleDrawer(true)}
           style={{
-            display: windowWidth >= 901 ? 'none' : 'inline', 
+            display: windowWidth >= 901 ? 'none' : 'inline',
           }}
         >
           <MenuIcon />
         </IconButton>
-        <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)} style={{width:"100%"}}>
-          <List className={style.mobileLinks} onClick={handleLinkClick} style={{ backgroundColor: 'rgb(174, 154, 100)',height:"100%"}}>
-            <ListItem component={Link} to="/">
+        <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}  PaperProps={{ style: { width: '100%' } }}>
+          <div  style={{ backgroundColor: 'rgb(174, 154, 100)', height: '100%'}}>
+            <IconButton  onClick={closeDrawer} style={{color:'white'}}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+          <List  onClick={handleLinkClick} style={{ backgroundColor: 'rgb(174, 154, 100)', height: '100%' }}>
+            <ListItem className={style.link2} component={Link} to="/">
               <ListItemText primary="Home" />
             </ListItem>
-            <ListItem  component={Link} to="/ourplace">
+            <ListItem className={style.link2} component={Link} to="/ourplace">
               <ListItemText primary="Our Places" />
             </ListItem>
-            <ListItem  component={Link} to="/menu">
+            <ListItem className={style.link2} component={Link} to="/menu">
               <ListItemText primary="Menu" />
             </ListItem>
-            <ListItem  component={Link} to="/gallery">
+            <ListItem className={style.link2} component={Link} to="/gallery">
               <ListItemText primary="Gallery" />
             </ListItem>
-            <ListItem  component={Link} to="/reservations">
+            <ListItem className={style.link2} component={Link} to="/reservations">
               <ListItemText primary="Reservations" />
             </ListItem>
-            <ListItem  component={Link} to="/contact">
+            <ListItem className={style.link2} component={Link} to="/contact">
               <ListItemText primary="Contact" />
             </ListItem>
           </List>

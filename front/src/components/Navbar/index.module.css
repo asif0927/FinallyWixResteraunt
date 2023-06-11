@@ -17,3 +17,13 @@ img{
 .link:hover{
     color: white;
 }
+.link2{
+    color: black;
+    transition: ease-in-out .1s;
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.link2:hover{
+    color: white;
+}
