@@ -1,0 +1,19 @@
+img{
+    height: 34px;
+    width: 120px;
+    object-fit: contain;
+}
+.link{
+    color: black;
+    margin-left: 30px;
+    transition: ease-in-out .1s;
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.link:active{
+    color: white;
+}
+.link:hover{
+    color: white;
+}

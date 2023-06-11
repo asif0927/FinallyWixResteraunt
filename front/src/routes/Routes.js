@@ -4,6 +4,7 @@ import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
 import Ourplace from "../pages/User/Ourplace";
 import Reservations from "../pages/User/Reservations";
+import Gallery from "../pages/User/Gallery";
 import Menu from "../pages/User/Menu";
 export const ROUTES = [
     {
@@ -23,8 +24,12 @@ export const ROUTES = [
                 element: <Menu/>
             },
             {
-                path: 'ourplaces',
+                path: 'ourplace',
                 element: <Ourplace/>
+            },
+            {
+                path: 'gallery',
+                element: <Gallery/>
             },
             {
                 path: 'reservations',
