@@ -1,5 +1,9 @@
 import Home from "../pages/User/Home";
 import MainRoot from "../pages/MainRoot";
+import AdminRoot from "../pages/Admin/AdminRoot";
+import Dashboard from "../pages/Admin/Dashboard";
+import Sliders from "../pages/Admin/Sliders";
+import Login from "../pages/Admin/Login";
 import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
 import Ourplace from "../pages/User/Ourplace";
@@ -41,4 +45,22 @@ export const ROUTES = [
             }
         ]
     },
+    {
+        path: '/admin',
+        element: <AdminRoot/>,
+        children: [
+            {
+                path: 'dashboards',
+                element: <Dashboard/>
+            },
+            {
+                path: 'sliders',
+                element:<Sliders/>
+            },
+            {
+                path: '*',
+                element: <Login/>
+            },
+        ]
+    }
 ]

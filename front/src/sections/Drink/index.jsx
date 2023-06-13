@@ -1,6 +1,5 @@
 import React from 'react'
 import style from "./index.module.css";
-import { textAlign } from '@mui/system';
 const index = () => {
   return (
     <>
