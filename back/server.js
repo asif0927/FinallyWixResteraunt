@@ -13,6 +13,12 @@ app.use(cors());
 
 
 
+
+const router = require('./routes');
+
+app.use('/api/adresses',router.adress);
+
+
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {
     type: String,

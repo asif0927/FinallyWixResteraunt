@@ -3,6 +3,7 @@ import MainRoot from "../pages/MainRoot";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import Dashboard from "../pages/Admin/Dashboard";
 import Sliders from "../pages/Admin/Sliders";
+import AdressandTelephone from "../pages/Admin/AdressandTelephone";
 import Login from "../pages/Admin/Login";
 import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
@@ -61,6 +62,10 @@ export const ROUTES = [
                 path: '*',
                 element: <Login/>
             },
+            {
+                path:'adress',
+                element:<AdressandTelephone/>
+            }
         ]
     }
 ]

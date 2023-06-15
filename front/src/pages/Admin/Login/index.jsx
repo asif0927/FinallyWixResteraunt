@@ -82,7 +82,7 @@ const Login = () => {
               id="email"
               placeholder="Email"
               as={TextField}
-              variant="outlined" 
+              variant="outlined"
             />
             <ErrorMessage name="email" component="div"  />
           </div>
