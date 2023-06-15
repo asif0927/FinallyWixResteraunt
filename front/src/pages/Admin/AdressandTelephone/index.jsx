@@ -111,7 +111,7 @@ const AdressandTelephone = () => {
         return address;
       });
       setAddresses(updatedAddresses);
-
+       toast.success('Updated Adress');
       handleCancelClick();
     } catch (error) {
       console.error('Failed to update address:', error);

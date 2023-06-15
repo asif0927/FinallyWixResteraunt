@@ -18,6 +18,8 @@ const router = require('./routes');
 
 app.use('/api/adresses',router.adress);
 
+app.use('/api/steaks',router.steak);
+
 
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {
