@@ -3,14 +3,14 @@ import axios from 'axios';
 
 
 //get all
-export const getAllSteakes = async(title)=>{
+export const getAllSteakes = async(url)=>{
   let Steakes;
   let URL;
   if (!title) {
       URL = API_BASE_URL+'/steaks';
   }
   else{
-      URL = API_BASE_URL+`/steaks/?title=${title}`
+      URL = API_BASE_URL+`/steaks/?url=${url}`
   }
   await axios.get(URL)
   .then(res =>{ 

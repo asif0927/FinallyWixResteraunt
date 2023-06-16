@@ -2,13 +2,13 @@ const SteakModel=require('../models/steak.model');
 
 const steakController = {
     getAll: async (req, res) => {
-      const {title} = req.query;
+      const {url} = req.query;
       const steaks = await SteakModel.find();
-      if (!title) {
+      if (!url) {
         res.status(200).send(steaks);
       } else {
         const searchedSteaks = steaks.filter((x) =>
-          x.title.toLowerCase().trim().includes(title.toLowerCase().trim())
+          x.url.toLowerCase().trim().includes(url.toLowerCase().trim())
         );
         res.status(200).send(searchedSteaks);
       }
@@ -18,27 +18,27 @@ const steakController = {
       //delete
       const deleteSteak = await SteakModel.findByIdAndDelete(id);
       res.status(203).send({
-        message: `${deleteSteak.title} deleted successfully!`,
+        message: `${deleteSteak.url} deleted successfully!`,
       });
     },
     post: async (req, res) => {
-      const { title,url } = req.body;
+      const {title, url } = req.body;
       const newSteak = new SteakModel({
         title:title,
         url:url,
       });
       await newSteak.save();
       res.status(201).send({
-        message: `${newSteak.title} posted successfully`,
+        message: `${newSteak.url} posted successfully`,
         payload: newSteak,
       });
     },
     edit: async(req, res) => {
       const id = req.params.id;
-      const { title,url } = req.body;
+      const {title,url } = req.body;
       const updatingSteak = {title:title,url:url};
       await SteakModel.findByIdAndUpdate(id,updatingSteak);
-      res.status(200).send(`${updatingSteak.title} updated successfully!`);
+      res.status(200).send(`${updatingSteak.url} updated successfully!`);
     }
   };
   

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { getAllSteakes } from "../../api/steakrequest";
 import 'swiper/swiper.min.css';
@@ -149,4 +149,16 @@ const Slider = () => {
 };
 
 export default Slider;
+*/
+import React from 'react'
+
+const index = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default index
 
