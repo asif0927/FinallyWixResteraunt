@@ -11,13 +11,20 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Sidebar = styled(Drawer)(({ theme }) => ({
-  width: 200,
+  width: '25%', 
   flexShrink: 0,
   '& .MuiDrawer-paper': {
-    width: 200,
+    width: '25%', 
     boxSizing: 'border-box',
     backgroundColor: '#009688', 
     color: '#fff', 
+    position:'fixed'
+  },
+  '@media (max-width: 700px)': {
+    width: '160px', 
+    '& .MuiDrawer-paper': {
+      width: '160px', 
+    },
   },
 }));
 

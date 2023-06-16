@@ -20,6 +20,8 @@ app.use('/api/adresses',router.adress);
 
 app.use('/api/steaks',router.steak);
 
+app.use('/api/socials',router.social);
+
 
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {
