@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-/*const multer = require("multer");
+const multer = require("multer");
 const uuid = require('uuid');
 const fs = require('fs');
 app.use(bodyParser.urlencoded({extended:false}))
@@ -31,51 +31,8 @@ var upload = multer({
             return cb(new Error('Only .png, .jpg,.webp and .jpeg format allowed!'));
         }
     }
-});  */
-const multer = require('multer');
-const uuid = require('uuid');
-const fs = require('fs');
+});  
 
-const DIR = './uploads/';
-
-// Create the upload directory if it doesn't exist
-if (!fs.existsSync(DIR)) {
-  fs.mkdirSync(DIR);
-}
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, DIR);
-  },
-  filename: (req, file, cb) => {
-    const fileName = file.originalname.toLowerCase().split(' ').join('-');
-    cb(null, uuid.v4() + '-' + fileName);
-  }
-});
-
-const upload = multer({
-  storage: storage,
-  fileFilter: (req, file, cb) => {
-    if (
-      file.mimetype == 'image/png' ||
-      file.mimetype == 'image/jpg' ||
-      file.mimetype == 'image/jpeg' ||
-      file.mimetype == 'image.webp'
-    ) {
-      cb(null, true);
-    } else {
-      cb(null, false);
-      return cb(new Error('Only .png, .jpg, .webp, and .jpeg format allowed!'));
-    }
-  }
-});
-
-// Use the multer middleware in your route handler
-app.post('/upload', upload.single('file'), (req, res) => {
-  // File is uploaded and available in req.file
-  console.log(req.file);
-  res.send('File uploaded successfully');
-});
 
 
 dotenv.config();

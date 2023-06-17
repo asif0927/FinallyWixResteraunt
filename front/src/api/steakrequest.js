@@ -6,7 +6,7 @@ import axios from 'axios';
 export const getAllSteakes = async(url)=>{
   let Steakes;
   let URL;
-  if (!title) {
+  if (!url) {
       URL = API_BASE_URL+'/steaks';
   }
   else{

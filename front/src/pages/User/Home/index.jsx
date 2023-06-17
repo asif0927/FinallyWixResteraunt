@@ -1,6 +1,7 @@
 import React from 'react'
 import Drink from "../../../sections/Drink";
 import Steak from "../../../sections/Steak";
+import Social from "../../../sections/Social";
 import Cow from "../../../sections/Cow";
 import Chat from "../../../sections/Chat";
 import Adress from "../../../sections/Adress";
@@ -17,6 +18,7 @@ const index = () => {
     <div style={{position:"relative"}}>
     <Adress/>
     <Steak/>
+    <Social/>
     <Cow/>
     <Chat/>
     <Drink/>

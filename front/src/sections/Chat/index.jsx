@@ -56,13 +56,15 @@ const ChatComponent = () => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '400px',
+            width: '300px',
             height: '600px',
             background: 'white',
             borderRadius: '8px',
             padding: '20px',
+            overflow: 'hidden', 
             '@media(max-width: 600px)': {
-                width: '200px',
+              width: '200px',
+              height: '400px',
             },
           },
         }}
