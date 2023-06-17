@@ -11,7 +11,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div style={{ position: "fixed", top: "40%", left: "96%", transform: "translate(-50%, -50%)", zIndex: "12000" }}>
+    <div style={{ position: "fixed", top: "40%", left: "95%", transform: "translate(-50%, -50%)", zIndex: "12000" }}>
       {data &&
         data.map((item, index) => (
           <div
