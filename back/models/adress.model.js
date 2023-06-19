@@ -9,6 +9,7 @@ const AdressModel = new mongoose.model(
     state: String,
     zipCode:String,
     telephone:String,
+    iframeSrc: String,
   })
 );
 

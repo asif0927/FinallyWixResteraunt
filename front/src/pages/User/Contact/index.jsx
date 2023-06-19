@@ -1,5 +1,6 @@
 import React from 'react'
 import {Helmet} from "react-helmet";
+import ContactandMap from "../../../sections/ContactandMap";
 const index = () => {
   return (
    <>
@@ -9,7 +10,9 @@ const index = () => {
                 <title>Contact</title>
             </Helmet>
     </div>
-   contact
+   <div style={{marginTop:"50px"}}>
+     <ContactandMap/>
+   </div>
    </>
   )
 }

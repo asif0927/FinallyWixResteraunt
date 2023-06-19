@@ -42,6 +42,7 @@ const AdressandTelephone = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
+  const [iframeSrc,setIframeSrc]=useState('');
   const [telephone, setTelephone] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -65,11 +66,13 @@ const AdressandTelephone = () => {
     setState(address.state);
     setZipCode(address.zipCode);
     setTelephone(address.telephone);
+    setIframeSrc(address.iframeSrc);
     setModalOpen(true);
   };
 
   const handleCancelClick = () => {
     setEditingAddress(null);
+    setIframeSrc('');
     setStreet('');
     setCity('');
     setState('');
@@ -88,6 +91,7 @@ const AdressandTelephone = () => {
         state,
         zipCode,
         telephone,
+        iframeSrc,
       });
 
       const updatedData = {
@@ -96,6 +100,7 @@ const AdressandTelephone = () => {
         state,
         zipCode,
         telephone,
+        iframeSrc,
       };
 
       await editAdressByID(editingAddress._id, updatedData);
@@ -131,6 +136,7 @@ const AdressandTelephone = () => {
                 <TableCell>State</TableCell>
                 <TableCell>Zip Code</TableCell>
                 <TableCell>Telephone</TableCell>
+                <TableCell>Iframe</TableCell>
                 <TableCell>Edit</TableCell>
               </TableRow>
             </TableHead>
@@ -142,6 +148,7 @@ const AdressandTelephone = () => {
                   <TableCell>{address.state}</TableCell>
                   <TableCell>{address.zipCode}</TableCell>
                   <TableCell>{address.telephone}</TableCell>
+                  <TableCell>{address.iframeSrc}</TableCell>
                   <TableCell>
                     <Button variant="contained" onClick={() => handleEditClick(address)}>
                       Edit
@@ -205,6 +212,13 @@ const AdressandTelephone = () => {
                   required
                   style={{ marginBottom: '20px' }}
                 />
+                <TextField
+                  label="IframeSrc"
+                  value={iframeSrc}
+                  onChange={(e) => setIframeSrc(e.target.value)}
+                  required
+                  style={{ marginBottom: '20px' }}
+                />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                   <Button variant="contained" onClick={handleCancelClick} style={{ marginRight: '10px' }}>
                     Cancel
@@ -222,4 +236,4 @@ const AdressandTelephone = () => {
   );
 };
 
-export default AdressandTelephone;
+export default AdressandTelephone;   

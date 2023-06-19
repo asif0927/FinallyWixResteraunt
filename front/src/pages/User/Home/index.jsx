@@ -4,6 +4,7 @@ import Steak from "../../../sections/Steak";
 import Social from "../../../sections/Social";
 import Cow from "../../../sections/Cow";
 import Chat from "../../../sections/Chat";
+import ContactandMap from "../../../sections/ContactandMap";
 import Adress from "../../../sections/Adress";
 import {Helmet} from "react-helmet";
 const index = () => {
@@ -22,6 +23,7 @@ const index = () => {
     <Cow/>
     <Chat/>
     <Drink/>
+    <ContactandMap/>
     </div>
     </>
   )

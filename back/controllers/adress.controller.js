@@ -14,13 +14,14 @@ const adressController = {
     }
   },
   post: async (req, res) => {
-    const { street, city, state, zipCode, telephone } = req.body;
+    const { street, city, state, zipCode, telephone,iframeSrc } = req.body;
     const newAddress = new AdressModel({
       street:street,
       city:city,
       state:state,
       zipCode:zipCode,
-      telephone:telephone
+      telephone:telephone,
+      iframeSrc: iframeSrc,
     });
     await newAddress.save();
     res.status(201).send({
@@ -30,8 +31,8 @@ const adressController = {
   },
   edit: async(req, res) => {
     const id = req.params.id;
-    const { street, city, state, zipCode, telephone } = req.body;
-    const updatingAdress = {street:street,city:city,state:state,zipCode:zipCode,telephone:telephone};
+    const { street, city, state, zipCode, telephone,iframeSrc } = req.body;
+    const updatingAdress = {street:street,city:city,state:state,zipCode:zipCode,telephone:telephone,iframeSrc:iframeSrc};
     await AdressModel.findByIdAndUpdate(id,updatingAdress);
     res.status(200).send(`${updatingAdress.city} updated successfully!`);
   }

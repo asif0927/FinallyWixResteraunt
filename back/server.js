@@ -6,32 +6,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-const multer = require("multer");
-const uuid = require('uuid');
-const fs = require('fs');
-app.use(bodyParser.urlencoded({extended:false}))
-const DIR = './uploads/';
-app.use('/uploads', express.static('uploads'));
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, DIR);
-    },
-    filename: (req, file, cb) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        cb(null, uuid.v4() + '-' + fileName)
-    }
-});
-var upload = multer({
-    storage: storage,
-    fileFilter: (req, file, cb) => {
-        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg"|| file.mimetype =="image.webp") {
-            cb(null, true);
-        } else {
-            cb(null, false);
-            return cb(new Error('Only .png, .jpg,.webp and .jpeg format allowed!'));
-        }
-    }
-});  
+
 
 
 
@@ -50,6 +25,7 @@ app.use('/api/steaks',router.steak);
 
 app.use('/api/socials',router.social);
 
+app.use('/api/worktime',router.worktime);
 
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {

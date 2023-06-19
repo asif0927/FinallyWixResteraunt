@@ -1,34 +1,29 @@
+import axios from "axios";
 import { API_BASE_URL } from "./baseurl";
-import axios from 'axios';
 
-
-//get all
-export const getAllSteakes = async(url)=>{
-  let Steakes;
+export const getAllSteakes = async (url) => {
+  let steakes;
   let URL;
   if (!url) {
-      URL = API_BASE_URL+'/steaks';
+    URL = `${API_BASE_URL}/steaks`;
+  } else {
+    URL = `${API_BASE_URL}/steaks/?url=${url}`;
   }
-  else{
-      URL = API_BASE_URL+`/steaks/?url=${url}`
-  }
-  await axios.get(URL)
-  .then(res =>{ 
-    Steakes = res.data;
-  })
+  await axios.get(URL).then((res) => {
+    steakes = res.data;
+  });
 
-  return Steakes
+  return steakes;
 }
-//post
-export const postSteakes = (payload)=>{
-  axios.post(`${API_BASE_URL}/steaks`,payload)
+
+export const postSteakes = (payload) => {
+  axios.post(`${API_BASE_URL}/steaks`, payload);
+};
+
+export const editSteakesByID = (id, payload) => {
+  axios.put(`${API_BASE_URL}/steaks/${id}`, payload);
 }
-//edit
-export const editSteaksByID = (id,payload)=>{
-  axios.put(`${API_BASE_URL}/steaks/${id}`,payload)
-}
-//delete
-//edit
-export const deleteSteaks = (id,payload)=>{
-    axios.delete(`${API_BASE_URL}/steaks/${id}`,payload)
+
+export const deleteSteakes = (id, payload) => {
+  axios.delete(`${API_BASE_URL}/steaks/${id}`, payload);
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllSocials } from "../../api/socialrequest";
-
+import style from "./index.module.css";
 const Index = () => {
   const [data, setData] = useState([]);
 
@@ -15,6 +15,7 @@ const Index = () => {
       {data &&
         data.map((item, index) => (
           <div
+          className={style.social}
             key={index}
             style={{
               display: "flex",

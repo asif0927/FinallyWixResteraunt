@@ -5,7 +5,8 @@ const AdressPostSchema = Joi.object({
     city: Joi.string().min(2).required(),
     state: Joi.string().required(),
     zipCode:Joi.string().min(2).required(),
-    telephone:Joi.string().min(7).required()
+    telephone:Joi.string().min(7).required(),
+    iframeSrc: Joi.string().required(),
 })
 
 module.exports = AdressPostSchema
