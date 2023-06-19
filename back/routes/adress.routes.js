@@ -6,6 +6,7 @@ const addressValidationMiddleware = require('../middlewares/adress.middleware');
 adress_router.get('/',adressController.getAll);
 adress_router.post('/',addressValidationMiddleware,adressController.post);
 adress_router.put('/:id',adressController.edit);
+adress_router.delete('/:id',adressController.delete);
 
 module.exports = adress_router;
 

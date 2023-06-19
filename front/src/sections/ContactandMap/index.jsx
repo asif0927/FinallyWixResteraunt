@@ -164,7 +164,11 @@ const Index = () => {
               MONDAY TO FRIDAY {time.starttime}-{time.finishtime}/Saturday to Sunday {time.weekendstarttime}-{time.weekendfinishtime}
             </h4>
           ))}
-          <div ref={mapRef} style={{ width: '100%', height: '400px', marginTop: '50px' }}></div>
+          <div style={{height:"400px",display:"flex",justifyContent:"center",alignItems:"center",width:"100%",marginTop:"30px"}}>
+          {addresses.map((address) => (
+              <iframe src={address.iframeSrc}></iframe>
+          ))}
+          </div>
           <div className={style.goToTop} onClick={handleGoToTop}>
             <div className={style.icon}><i className="fa-solid fa-chevron-up"></i></div>
             <p className={style.icontitle}>Go to Top</p>

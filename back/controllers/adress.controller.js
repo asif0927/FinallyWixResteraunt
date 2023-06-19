@@ -35,7 +35,15 @@ const adressController = {
     const updatingAdress = {street:street,city:city,state:state,zipCode:zipCode,telephone:telephone,iframeSrc:iframeSrc};
     await AdressModel.findByIdAndUpdate(id,updatingAdress);
     res.status(200).send(`${updatingAdress.city} updated successfully!`);
-  }
+  },
+  delete: async (req, res) => {
+    const id = req.params.id;
+    //delete
+    const deleteAdress = await AdressModel.findByIdAndDelete(id);
+    res.status(203).send({
+      message: `${deleteAdress.city} deleted successfully!`,
+    });
+  },
 };
 
 module.exports = adressController;
