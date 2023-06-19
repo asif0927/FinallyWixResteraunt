@@ -27,6 +27,8 @@ app.use('/api/socials',router.social);
 
 app.use('/api/worktime',router.worktime);
 
+app.use('/api/gifs',router.gif);
+
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {
     type: String,
