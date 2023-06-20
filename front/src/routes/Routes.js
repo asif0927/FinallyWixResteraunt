@@ -6,6 +6,7 @@ import Sliders from "../pages/Admin/Sliders";
 import AdressandTelephone from "../pages/Admin/AdressandTelephone";
 import Login from "../pages/Admin/Login";
 import GalleryCrud from "../pages/Admin/GalleryCrud";
+import WorkTime from "../pages/Admin/WorkTime";
 import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
 import Ourplace from "../pages/User/Ourplace";
@@ -70,6 +71,10 @@ export const ROUTES = [
             {
                 path:'gallerycrud',
                 element:<GalleryCrud/>,
+            },
+            {
+                path:'worktime',
+                element:<WorkTime/>
             }
         ]
     }

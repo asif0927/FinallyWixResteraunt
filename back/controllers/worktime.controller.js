@@ -39,7 +39,7 @@ const WorkTimeController = {
       const id = req.params.id;
       const {starttime,finishtime,weekendstarttime,weekendfinishtime } = req.body;
       const updatingTime = {starttime:starttime,finishtime:finishtime,weekendstarttime:weekendstarttime,weekendfinishtime:weekendfinishtime};
-      await SteakModel.findByIdAndUpdate(id,updatingTime);
+      await WorkTimeModel.findByIdAndUpdate(id,updatingTime);
       res.status(200).send(`${updatingTime.starttime} updated successfully!`);
     }
   };

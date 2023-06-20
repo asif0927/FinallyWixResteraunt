@@ -31,6 +31,8 @@ app.use('/api/gifs',router.gif);
 
 app.use('/api/gallery',router.gallery);
 
+app.use('/api/logo',router.logo);
+
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {
     type: String,

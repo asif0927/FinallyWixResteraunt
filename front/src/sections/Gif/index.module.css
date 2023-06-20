@@ -1,10 +1,8 @@
 .section{
-    height: 40vh;
+    padding:100px 0;
 }
 .flex{
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 50%;
     margin: 0 auto;
     flex-direction: column;
@@ -13,6 +11,7 @@
     font-size: 19px;
     color: rgb(174, 154, 100);
     margin-top: 10%;
+    margin: 0 auto;
 }
 .input{
     width: 100%;
