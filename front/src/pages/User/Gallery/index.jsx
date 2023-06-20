@@ -1,5 +1,6 @@
 import React from 'react'
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet"; 
+import GallerySection from "../../../sections/GallerySection";
 const index = () => {
   return (
     <>
@@ -9,9 +10,9 @@ const index = () => {
                 <title>Gallery</title>
             </Helmet>
     </div>
-    <div>
-      gallery
-    </div>
+    <div style={{marginTop:"50px"}}>
+     <GallerySection/>
+   </div>
     </>
   )
 }

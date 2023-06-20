@@ -9,6 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ImageIcon from '@mui/icons-material/Image';
 
 const Sidebar = styled(Drawer)(({ theme }) => ({
   width: '25%', 
@@ -40,6 +41,7 @@ const AdminSidebar = () => {
     { title: 'Sliders', path: '/admin/sliders', icon: <InboxIcon /> },
     { title: 'Dashboard', path: '/admin/dashboards', icon: <DashboardIcon /> },
     { title: 'Adress and Telephone', path: '/admin/adress', icon: <LocationOnIcon /> },
+    {title:'GalleryCrud',path:'/admin/gallerycrud',icon:<ImageIcon/>},
   ];
 
   return (

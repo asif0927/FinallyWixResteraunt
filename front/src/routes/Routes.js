@@ -5,6 +5,7 @@ import Dashboard from "../pages/Admin/Dashboard";
 import Sliders from "../pages/Admin/Sliders";
 import AdressandTelephone from "../pages/Admin/AdressandTelephone";
 import Login from "../pages/Admin/Login";
+import GalleryCrud from "../pages/Admin/GalleryCrud";
 import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
 import Ourplace from "../pages/User/Ourplace";
@@ -65,6 +66,10 @@ export const ROUTES = [
             {
                 path:'adress',
                 element:<AdressandTelephone/>
+            },
+            {
+                path:'gallerycrud',
+                element:<GalleryCrud/>,
             }
         ]
     }
