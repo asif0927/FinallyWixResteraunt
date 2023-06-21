@@ -1,5 +1,6 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
+import Service from "../../../sections/Service";
 const index = () => {
   return (
    <>
@@ -9,6 +10,9 @@ const index = () => {
                 <title>OurPlace</title>
             </Helmet>
     </div>
+    <div style={{marginTop:"50px"}}>
+     <Service/>
+   </div>
    </>
   )
 }

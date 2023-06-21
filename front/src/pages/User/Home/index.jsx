@@ -3,6 +3,7 @@ import Drink from "../../../sections/Drink";
 import Steak from "../../../sections/Steak";
 import Social from "../../../sections/Social";
 import Cow from "../../../sections/Cow";
+import Service from "../../../sections/Service";
 import Chat from "../../../sections/Chat";
 import ContactandMap from "../../../sections/ContactandMap";
 import Gif from "../../../sections/Gif";
@@ -21,6 +22,7 @@ const index = () => {
     <div style={{position:"relative"}}>
     <Adress/>
     <Steak/>
+    <Service/>
     <Social/>
     <Cow/>
     <Chat/>

@@ -1,0 +1,18 @@
+.header{
+    color: rgb(174, 154, 100);
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+.texts{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px;
+  text-align: center;
+  color: rgb(174, 154, 100);
+  width: 100%;
+}
+.content{
+    position: relative;
+}
