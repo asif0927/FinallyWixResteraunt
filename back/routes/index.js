@@ -5,6 +5,7 @@ const worktime_router = require('./worktime.routes');
 const gif_router=require('./gif.routes');
 const gallery_router=require('./galery.routes');
 const logo_router=require('./logo.routes');
+const service_router=require('./service.routes');
 const router = {
     adress: adress_router,
     steak:steak_router,
@@ -13,6 +14,7 @@ const router = {
     gif:gif_router,
     gallery:gallery_router,
     logo:logo_router,
+    service:service_router,
 }
 
 module.exports = router
