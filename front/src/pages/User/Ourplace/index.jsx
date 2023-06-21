@@ -12,7 +12,7 @@ const index = () => {
     </div>
     <div style={{marginTop:"50px"}}>
      <Service/>
-   </div>
+    </div>
    </>
   )
 }
