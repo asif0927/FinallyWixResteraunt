@@ -7,6 +7,8 @@ import AdressandTelephone from "../pages/Admin/AdressandTelephone";
 import Login from "../pages/Admin/Login";
 import GalleryCrud from "../pages/Admin/GalleryCrud";
 import WorkTime from "../pages/Admin/WorkTime";
+import SocialMedia from "../pages/Admin/SocialMedia";
+import ServiceCrud from "../pages/Admin/ServiceCrud";
 import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
 import Ourplace from "../pages/User/Ourplace";
@@ -75,6 +77,14 @@ export const ROUTES = [
             {
                 path:'worktime',
                 element:<WorkTime/>
+            },
+            {
+                path:'socailmedia',
+                element:<SocialMedia/>
+            },
+            {
+                path:'servicecrud',
+                element:<ServiceCrud/>
             }
         ]
     }

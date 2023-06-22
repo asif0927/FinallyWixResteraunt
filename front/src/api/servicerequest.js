@@ -28,6 +28,6 @@ export const editServiceByID = (id,payload)=>{
   axios.put(`${API_BASE_URL}/service/${id}`,payload)
 }
 //delete
-export const deleteServices = (id,payload)=>{
-    axios.delete(`${API_BASE_URL}/service/${id}`,payload)
-}
+export const deleteServices = async (id) => {
+  await axios.delete(`${API_BASE_URL}/service/${id}`);
+};

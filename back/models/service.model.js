@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
 
-const ServiceModel = new mongoose.model(
-  "Services",
+const ServiceModel = mongoose.model(
+  "Service",
   new mongoose.Schema({
-    title:String,
-    desc:String,
+    title: String,
+    desc: String,
   })
 );
 
+
 module.exports = ServiceModel;
+

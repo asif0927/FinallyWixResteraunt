@@ -11,6 +11,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ImageIcon from '@mui/icons-material/Image';
 import WatchIcon from '@mui/icons-material/Watch';
+import TagIcon from '@mui/icons-material/Tag';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 
 const Sidebar = styled(Drawer)(({ theme }) => ({
   width: '25%', 
@@ -44,6 +46,8 @@ const AdminSidebar = () => {
     { title: 'Adress and Telephone', path: '/admin/adress', icon: <LocationOnIcon /> },
     {title:'GalleryCrud',path:'/admin/gallerycrud',icon:<ImageIcon/>},
     {title:'Worktime',path:'/admin/worktime',icon:<WatchIcon/>},
+    {title:'ServiceCrud',path:'/admin/servicecrud',icon:<MiscellaneousServicesIcon/>},
+    {title:'SocialMedia',path:'/admin/socailmedia',icon:<TagIcon/>},
   ];
 
   return (
