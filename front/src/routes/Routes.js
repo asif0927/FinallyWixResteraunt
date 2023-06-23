@@ -3,6 +3,7 @@ import MainRoot from "../pages/MainRoot";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import Dashboard from "../pages/Admin/Dashboard";
 import Sliders from "../pages/Admin/Sliders";
+import Subscribers from "../pages/Admin/Subscribers";
 import AdressandTelephone from "../pages/Admin/AdressandTelephone";
 import Login from "../pages/Admin/Login";
 import GalleryCrud from "../pages/Admin/GalleryCrud";
@@ -85,6 +86,10 @@ export const ROUTES = [
             {
                 path:'servicecrud',
                 element:<ServiceCrud/>
+            },
+            {
+                path:'subscribers',
+                element:<Subscribers/>
             }
         ]
     }

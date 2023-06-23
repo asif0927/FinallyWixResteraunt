@@ -35,6 +35,8 @@ app.use('/api/logo',router.logo);
 
 app.use('/api/service',router.service);
 
+app.use('/api/subscribe', router.subscriber);
+
 const Users = new mongoose.model('User', new mongoose.Schema({
   email: {
     type: String,
