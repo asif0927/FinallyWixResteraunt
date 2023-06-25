@@ -2,6 +2,7 @@ import Home from "../pages/User/Home";
 import MainRoot from "../pages/MainRoot";
 import AdminRoot from "../pages/Admin/AdminRoot";
 import Dashboard from "../pages/Admin/Dashboard";
+import ReservationCrud from "../pages/Admin/ReservationCrud";
 import Sliders from "../pages/Admin/Sliders";
 import Subscribers from "../pages/Admin/Subscribers";
 import AdressandTelephone from "../pages/Admin/AdressandTelephone";
@@ -90,6 +91,10 @@ export const ROUTES = [
             {
                 path:'subscribers',
                 element:<Subscribers/>
+            },
+            {
+                path:'reservations',
+                element:<ReservationCrud/>,
             }
         ]
     }

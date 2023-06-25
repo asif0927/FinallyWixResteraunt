@@ -13,6 +13,7 @@ import ImageIcon from '@mui/icons-material/Image';
 import WatchIcon from '@mui/icons-material/Watch';
 import TagIcon from '@mui/icons-material/Tag';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import AddAlarmIcon from '@mui/icons-material/AddAlarm';
 import PersonIcon from '@mui/icons-material/Person';
 const Sidebar = styled(Drawer)(({ theme }) => ({
   width: '25%', 
@@ -48,7 +49,8 @@ const AdminSidebar = () => {
     {title:'Worktime',path:'/admin/worktime',icon:<WatchIcon/>},
     {title:'ServiceCrud',path:'/admin/servicecrud',icon:<MiscellaneousServicesIcon/>},
     {title:'SocialMedia',path:'/admin/socailmedia',icon:<TagIcon/>},
-    {title:'Subscribers',path:'/admin/subscribers',icon:<PersonIcon/>}
+    {title:'Subscribers',path:'/admin/subscribers',icon:<PersonIcon/>},
+    {title:'Reservation',path:'/admin/reservations',icon:<AddAlarmIcon/>}
   ];
 
   return (

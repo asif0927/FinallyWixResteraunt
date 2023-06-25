@@ -1,41 +1,22 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { getAllAddresses } from '../../api/adressrequest';
 import { getAllWorkTimes } from '../../api/worktimerequest';
 import style from './index.module.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Map, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
-import 'ol/ol.css';
+import axios from 'axios';
 
-const Index = () => {
+
+
+
+const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [addresses, setAddresses] = useState([]);
   const [worktimes, setWorkTimes] = useState([]);
-  const mapRef = useRef(null);
-
-  useEffect(() => {
-    const map = new Map({
-      target: mapRef.current,
-      layers: [
-        new TileLayer({
-          source: new OSM()
-        })
-      ],
-      view: new View({
-        center: [0, 0],
-        zoom: 2
-      })
-    });
-
-    return () => {
-      map.setTarget(null);
-    };
-  }, []);
 
   useEffect(() => {
     const fetchAddresses = async () => {
@@ -62,6 +43,42 @@ const Index = () => {
 
     fetchWorkTimes();
   }, []);
+
+
+  const sendEmail = async (name, email, phone, message) => {
+    try {
+      const response = await axios.post('http://localhost:5454/api/send-email', {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+      });
+  
+      if (response.status === 200) {
+        toast.success('email sent');
+        console.log('E-posta gönderildi!');
+
+      } else {
+        console.error('E-posta gönderilemedi.');
+        toast.error('email not sent');
+      }
+    } catch (error) {
+      console.error('E-posta gönderme hatası:', error);
+      toast.error('email not sent');
+    }
+  };
+  
+  
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendEmail(name, email, phone, message);
+    setName('');
+    setEmail('');
+    setPhone('');
+    setMessage('');
+    console.log(sendEmail);
+  };
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -96,7 +113,7 @@ const Index = () => {
         </h2>
         <p className={style.paragraph}>TELL US WHAT YOU THINK AND HOW WE'RE DOING</p>
         <div className={style.container}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2}>
                 <Grid xs={12} md={6}>
@@ -112,7 +129,7 @@ const Index = () => {
                     />
                     <input
                       className={style.input}
-                      type="text"
+                      type="email"
                       name="email"
                       value={email}
                       placeholder="Email"
@@ -139,7 +156,7 @@ const Index = () => {
                       required
                       onChange={handleMessageChange}
                     ></textarea>
-                    <button className={style.button}>
+                    <button className={style.button} type="submit">
                       <span className={style.span}>Submit</span>
                     </button>
                   </div>
@@ -164,10 +181,10 @@ const Index = () => {
               MONDAY TO FRIDAY {time.starttime}-{time.finishtime}/Saturday to Sunday {time.weekendstarttime}-{time.weekendfinishtime}
             </h4>
           ))}
-          <div style={{height:"400px",display:"flex",justifyContent:"center",alignItems:"center",width:"100%",marginTop:"30px"}}>
-          {addresses.map((address) => (
-              <iframe src={address.iframeSrc}></iframe>
-          ))}
+          <div style={{ height: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: '30px' }}>
+            {addresses.map((address) => (
+              <iframe key={address.id} src={address.iframeSrc}></iframe>
+            ))}
           </div>
           <div className={style.goToTop} onClick={handleGoToTop}>
             <div className={style.icon}><i className="fa-solid fa-chevron-up"></i></div>
@@ -179,5 +196,4 @@ const Index = () => {
   );
 };
 
-export default Index;
-
+export default Contact;  
