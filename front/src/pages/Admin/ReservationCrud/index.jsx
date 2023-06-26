@@ -16,7 +16,7 @@ const Index = () => {
       const response = await axios.get(`${API_BASE_URL}/reservation`);
       setReservations(response.data);
     } catch (error) {
-      console.error('Failed to fetch reservations:', error.message);
+      console.error('Rezervasyonları getirme başarısız oldu:', error.message);
     }
   };
 
@@ -24,8 +24,16 @@ const Index = () => {
     try {
       await axios.put(`${API_BASE_URL}/reservation/${reservationId}/accept`);
       fetchReservations(); 
+      
+      
+      const reservation = reservations.find(reservation => reservation._id === reservationId);
+      if (reservation) {
+        const email = reservation.email;
+        await axios.post(`${API_BASE_URL}/sendemail`, { email, status: 'accepted' });
+        console.log('Rezervasyon kabul edildi: E-posta gönderildi');
+      }
     } catch (error) {
-      console.error('Failed to accept reservation:', error.message);
+      console.error('Rezervasyonu kabul etme başarısız oldu:', error.message);
     }
   };
 
@@ -33,8 +41,15 @@ const Index = () => {
     try {
       await axios.put(`${API_BASE_URL}/reservation/${reservationId}/reject`);
       fetchReservations(); 
+      
+      const reservation = reservations.find(reservation => reservation._id === reservationId);
+      if (reservation) {
+        const email = reservation.email;
+        await axios.post(`${API_BASE_URL}/sendemail`, { email, status: 'rejected' });
+        console.log('Rezervasyon reddedildi: E-posta gönderildi');
+      }
     } catch (error) {
-      console.error('Failed to reject reservation:', error.message);
+      console.error('Rezervasyonu reddetme başarısız oldu:', error.message);
     }
   };
 
@@ -68,7 +83,7 @@ const Index = () => {
           <Button type="primary" onClick={() => handleAccept(record._id)}>
             Accept
           </Button>
-          <Button type="primary" danger style={{marginLeft:"20px"}} onClick={() => handleReject(record._id)}>
+          <Button type="primary" danger style={{ marginLeft: "20px" }} onClick={() => handleReject(record._id)}>
             Reject
           </Button>
         </span>
@@ -79,4 +94,4 @@ const Index = () => {
   return <Table columns={columns} dataSource={reservations} style={{ marginLeft: '35%', width: '50%' }} />;
 };
 
-export default Index;
+export default Index;  

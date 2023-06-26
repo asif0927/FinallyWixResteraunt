@@ -6,6 +6,9 @@ import style from './index.module.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
+
+
 
 
 
@@ -47,26 +50,26 @@ const Contact = () => {
 
   const sendEmail = async (name, email, phone, message) => {
     try {
-      const response = await axios.post('http://localhost:5454/api/send-email', {
-        name: name,
-        email: email,
-        phone: phone,
-        message: message
-      });
+      await emailjs.send(
+        'service_589vex6', 
+        'template_ga41fpf', 
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          message: message
+        },
+        'YelTWmhLiKDWSgfqB'
+      );
   
-      if (response.status === 200) {
-        toast.success('email sent');
-        console.log('E-posta gönderildi!');
-
-      } else {
-        console.error('E-posta gönderilemedi.');
-        toast.error('email not sent');
-      }
+      toast.success('email sent');
+      console.log('E-posta gönderildi!');
     } catch (error) {
       console.error('E-posta gönderme hatası:', error);
       toast.error('email not sent');
     }
   };
+  
   
   
 

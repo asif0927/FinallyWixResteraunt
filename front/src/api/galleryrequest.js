@@ -2,32 +2,36 @@ import { API_BASE_URL } from "./baseurl";
 import axios from 'axios';
 
 
-//get all
-export const getAllGallerys = async(img)=>{
+export const getAllGallerys = async (img) => {
   let Gallerys;
   let URL;
+  
   if (!img) {
-      URL = API_BASE_URL+'/gallery';
+    URL = API_BASE_URL + '/gallery';
+  } else {
+    URL = API_BASE_URL + `/gallery/?img=${img}`;
   }
-  else{
-      URL = API_BASE_URL+`/gallery/?img=${img}`
+  
+  try {
+    const response = await axios.get(URL);
+    Gallerys = response.data;
+  } catch (error) {
+    console.log("Error fetching gallery data:", error);
   }
-  await axios.get(URL)
-  .then(res =>{ 
-    Gallerys = res.data;
-  })
 
-  return Gallerys
-}
-//post
-export const postGalerrys = (payload)=>{
-  axios.post(`${API_BASE_URL}/gallery`,payload)
-}
-//edit
-export const editGalleryByID = (id,payload)=>{
-  axios.put(`${API_BASE_URL}/gallery/${id}`,payload)
-}
-//delete
-export const deleteGallery = (id,payload)=>{
-    axios.delete(`${API_BASE_URL}/gallery/${id}`,payload)
-}
+  return Gallerys;
+};
+
+
+export const postGalerrys = (payload) => {
+  return axios.post(`${API_BASE_URL}/gallery`, payload);
+};
+
+
+export const editGalleryByID = (id, payload) => {
+  return axios.put(`${API_BASE_URL}/gallery/${id}`, payload);
+};
+
+export const deleteGallery = (id, payload) => {
+  return axios.delete(`${API_BASE_URL}/gallery/${id}`, payload);
+};

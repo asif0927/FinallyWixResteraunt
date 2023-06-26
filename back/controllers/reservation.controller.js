@@ -1,15 +1,14 @@
 const Reservation = require('../models/reservation.model');
 const nodemailer = require('nodemailer');
 
-// Rezervasyon oluşturma
+
 exports.createReservation = async (req, res) => {
   try {
     const { partySize, date, time, email } = req.body;
 
-    // Rezervasyon oluştur
     const reservation = await Reservation.create({ partySize, date, time, email });
 
-    // Kullanıcıya e-posta gönder
+    
     sendEmail(email, 'Reservation Successful', 'Your reservation has been successfully created.');
 
     res.status(201).json(reservation);
@@ -19,7 +18,7 @@ exports.createReservation = async (req, res) => {
   }
 };
 
-// Rezervasyonları listeleme
+
 exports.getReservations = async (req, res) => {
   try {
     const reservations = await Reservation.find();
@@ -30,15 +29,15 @@ exports.getReservations = async (req, res) => {
   }
 };
 
-// Rezervasyonu kabul etme
+
 exports.acceptReservation = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Rezervasyonu güncelle
+    
     const reservation = await Reservation.findByIdAndUpdate(id, { status: 'accepted' }, { new: true });
 
-    // Kullanıcıya e-posta gönder
+    
     sendEmail(reservation.email, 'Reservation Accepted', 'Your reservation has been accepted.');
 
     res.status(200).json(reservation);
@@ -48,15 +47,15 @@ exports.acceptReservation = async (req, res) => {
   }
 };
 
-// Rezervasyonu reddetme
+
 exports.rejectReservation = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Rezervasyonu güncelle
+    
     const reservation = await Reservation.findByIdAndUpdate(id, { status: 'rejected' }, { new: true });
 
-    // Kullanıcıya e-posta gönder
+   
     sendEmail(reservation.email, 'Reservation Rejected', 'Your reservation has been rejected.');
 
     res.status(200).json(reservation);
@@ -66,9 +65,9 @@ exports.rejectReservation = async (req, res) => {
   }
 };
 
-// E-posta gönderme
+
 const sendEmail = (to, subject, message) => {
-  // E-posta ayarları
+ 
   const transporter = nodemailer.createTransport({
     service: 'smtp.elasticemail.com',
     auth: {
@@ -77,7 +76,7 @@ const sendEmail = (to, subject, message) => {
     }
   });
 
-  // E-posta gönderme işlemi
+
   transporter.sendMail({
     from: 'haqverdizadeasif177@gmail.com',
     to,

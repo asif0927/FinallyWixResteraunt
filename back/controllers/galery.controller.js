@@ -37,7 +37,7 @@ const galeryController = {
       const id = req.params.id;
       const {img,hastags } = req.body;
       const updatingGalerry= {img:img,hastags:hastags};
-      await GifModel.findByIdAndUpdate(id,updatingGalerry);
+      await GaleryModel.findByIdAndUpdate(id,updatingGalerry);
       res.status(200).send(`${updatingGalerry.img} updated successfully!`);
     }
   };
