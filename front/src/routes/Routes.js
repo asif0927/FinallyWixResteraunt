@@ -9,6 +9,7 @@ import AdressandTelephone from "../pages/Admin/AdressandTelephone";
 import Login from "../pages/Admin/Login";
 import GalleryCrud from "../pages/Admin/GalleryCrud";
 import WorkTime from "../pages/Admin/WorkTime";
+import GifCrud from "../pages/Admin/GifCrud";
 import SocialMedia from "../pages/Admin/SocialMedia";
 import ServiceCrud from "../pages/Admin/ServiceCrud";
 import NotFound from "../pages/User/NotFound";
@@ -95,6 +96,10 @@ export const ROUTES = [
             {
                 path:'reservations',
                 element:<ReservationCrud/>,
+            },
+            {
+                path:'gifcrud',
+                element:<GifCrud/>
             }
         ]
     }
