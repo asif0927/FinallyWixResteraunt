@@ -14,6 +14,7 @@ import SocialMedia from "../pages/Admin/SocialMedia";
 import ServiceCrud from "../pages/Admin/ServiceCrud";
 import NotFound from "../pages/User/NotFound";
 import Contact from "../pages/User/Contact";
+import FoodDetail from "../pages/User/FoodDetail";
 import Ourplace from "../pages/User/Ourplace";
 import Reservations from "../pages/User/Reservations";
 import Gallery from "../pages/User/Gallery";
@@ -34,6 +35,10 @@ export const ROUTES = [
             {
                 path: 'menu',
                 element: <Menu/>
+            },
+            {
+                path:'foods/:id',
+                element:<FoodDetail/>
             },
             {
                 path: 'ourplace',

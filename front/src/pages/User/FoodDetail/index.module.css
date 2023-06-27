@@ -1,35 +1,10 @@
 .section{
     padding: 50px 0;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(50, 50, 50); 
 }
 .container{
     width: 55%;
     margin: 0 auto;
-}
-.header{
-    text-align: center;
-    text-transform: uppercase;
-    color: rgb(174, 154, 100);
-    font-size: 38px;
-    margin-bottom: 27px;
-}
-@media screen and (max-width: 700px) {
-    .header{
-        font-size: 23px;
-    }
-    .text{
-        font-size: 20px;
-    }
-}
-.hr{
-    background-color: rgba(132, 132, 132, 1);
-    height: 2px;
-    margin:20px 0;
-}
-.categoryName{
-    color: rgb(174, 154, 100);
-    font-size: 27px;
-    text-transform: uppercase;
 }
 .foodContainer{
     display: flex;
@@ -38,7 +13,7 @@
 }
 .image{
    width: 100%;
-   height: auto;
+   height: 10vh;
    object-fit: contain;
 }
 .foodContainer {
@@ -46,10 +21,10 @@
     margin-bottom: 40px;
 }
   
-  .image {
+.image {
     width: 100%;
     height: auto;
-  }
+}
   
   .details {
     display: flex;

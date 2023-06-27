@@ -6,6 +6,10 @@ export const getFoods = () => {
 };
 
 
+export const getFoodById = (foodId) => {
+  return axios.get(`${API_BASE_URL}/foods/${foodId}`);
+};
+
 export const addFood = (foodData) => {
   return axios.post(`${API_BASE_URL}/foods`, foodData);
 };
