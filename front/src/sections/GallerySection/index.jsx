@@ -27,7 +27,7 @@ const Index = () => {
         </Typography>
         <Grid container spacing={2}>
           {gallerys.map((gallery) => (
-            <Grid item xs={6} sm={6} md={3} lg={3} key={gallery.id} className={style.grid}>
+            <Grid item xs={12} sm={6} md={3} lg={3} key={gallery.id} className={style.grid}>
               <div className={style.imageContainer}>
               <img src={gallery.img} alt="Gallery Image" className={style.image} />
                 <Typography

@@ -48,7 +48,7 @@ const Index = () => {
         modules={[Autoplay, Pagination, Navigation]}
       >
         {slidesData.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className={style.swiper}>
             <div className={style.content}>
               <div className="slide-image-container">
                 <img
@@ -79,4 +79,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Index;  

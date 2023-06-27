@@ -7,7 +7,9 @@ const gallery_router=require('./galery.routes');
 const logo_router=require('./logo.routes');
 const service_router=require('./service.routes');
 const subscriber_router=require('./subscribe.routes');
-const reservation_router=require('./reservation.routes')
+const reservation_router=require('./reservation.routes');
+const category_routerr=require('./category.routes');
+const food_router=require('./food.routes');
 const router = {
     adress: adress_router,
     steak:steak_router,
@@ -19,6 +21,8 @@ const router = {
     service:service_router,
     subscriber:subscriber_router,
     reservation:reservation_router,
+    category:category_routerr,
+    food:food_router,
 }
 
 module.exports = router

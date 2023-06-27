@@ -40,6 +40,10 @@ app.use('/api/subscribe', router.subscriber);
 
 app.use('/api/reservation',router.reservation);
 
+app.use('/api/categories',router.category);
+
+app.use('/api/foods',router.food);
+
 
 
 /*const nodemailer = require('nodemailer');
