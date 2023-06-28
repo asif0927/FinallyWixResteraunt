@@ -16,6 +16,7 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import AddAlarmIcon from '@mui/icons-material/AddAlarm';
 import PersonIcon from '@mui/icons-material/Person';
 import GifIcon from '@mui/icons-material/Gif';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 const Sidebar = styled(Drawer)(({ theme }) => ({
   width: '25%', 
   flexShrink: 0,
@@ -44,7 +45,7 @@ const AdminSidebar = () => {
 
   const adminPages = [
     {title: 'Sliders', path: '/admin/sliders', icon: <InboxIcon /> },
-    {title: 'Dashboard', path: '/admin/dashboards', icon: <DashboardIcon /> },
+    {title: 'LogoEdit', path: '/admin/dashboards', icon: <DashboardIcon /> },
     {title: 'Adress and Telephone', path: '/admin/adress', icon: <LocationOnIcon /> },
     {title:'GalleryCrud',path:'/admin/gallerycrud',icon:<ImageIcon/>},
     {title:'Worktime',path:'/admin/worktime',icon:<WatchIcon/>},
@@ -52,7 +53,8 @@ const AdminSidebar = () => {
     {title:'SocialMedia',path:'/admin/socailmedia',icon:<TagIcon/>},
     {title:'Subscribers',path:'/admin/subscribers',icon:<PersonIcon/>},
     {title:'Reservation',path:'/admin/reservations',icon:<AddAlarmIcon/>},
-    {title:'GifCrud',path:'/admin/gifcrud',icon:<GifIcon/>}
+    {title:'GifCrud',path:'/admin/gifcrud',icon:<GifIcon/>},
+    {title:'CategoryCrud',path:'/admin/categorycrud',icon:<MenuBookIcon/>},
   ];
 
   return (

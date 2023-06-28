@@ -6,6 +6,7 @@ import ReservationCrud from "../pages/Admin/ReservationCrud";
 import Sliders from "../pages/Admin/Sliders";
 import Subscribers from "../pages/Admin/Subscribers";
 import AdressandTelephone from "../pages/Admin/AdressandTelephone";
+import CategoryCrud from "../pages/Admin/CategoryCrud";
 import Login from "../pages/Admin/Login";
 import GalleryCrud from "../pages/Admin/GalleryCrud";
 import WorkTime from "../pages/Admin/WorkTime";
@@ -105,6 +106,10 @@ export const ROUTES = [
             {
                 path:'gifcrud',
                 element:<GifCrud/>
+            },
+            {
+                path:'categorycrud',
+                element:<CategoryCrud/>
             }
         ]
     }

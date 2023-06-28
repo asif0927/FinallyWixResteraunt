@@ -154,7 +154,7 @@ const handleDeleteSocial = (id) => {
         <Table columns={columns} dataSource={socials} />
 
         <Modal
-          visible={modalOpen}
+          open={modalOpen}
           title={editingSocial ? 'Edit Social Media Entry' : 'Add New Social Media Entry'}
           onCancel={handleCloseModal}
           onOk={handleSubmit}

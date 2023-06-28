@@ -164,7 +164,7 @@ const ServiceCRUD = () => {
         <Table columns={columns} dataSource={services} />
 
         <Modal
-          visible={modalOpen}
+          open={modalOpen}
           title={editingService ? 'Edit Service' : 'Add New Service'}
           onCancel={handleCloseModal}
           onOk={handleSubmit}

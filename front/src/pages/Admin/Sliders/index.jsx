@@ -221,7 +221,7 @@ const SliderCRUD = () => {
         <Table columns={columns} dataSource={sliders} />
 
         <Modal
-          visible={modalOpen}
+          open={modalOpen}
           title={editingSlider ? 'Edit Slider' : 'Add New Slider'}
           onCancel={handleCloseModal}
           onOk={handleSubmit}

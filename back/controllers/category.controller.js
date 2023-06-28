@@ -16,12 +16,13 @@ exports.deleteCategory = async (req, res) => {
   try {
     const categoryId = req.params.id;
     await Category.findByIdAndDelete(categoryId);
-    await Food.deleteMany({ categoryId });
+    await FoodModel.deleteMany({ categoryId }); 
     res.json({ message: 'Category deleted!' });
   } catch (error) {
     res.status(500).json({ error: 'Error' });
   }
 };
+
 exports.updateCategory = async (req, res) => {
   try {
     const categoryId = req.params.id;

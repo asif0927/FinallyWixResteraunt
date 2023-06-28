@@ -114,7 +114,7 @@ const Index = () => {
         <Table columns={columns} dataSource={gifs} />
 
         <Modal
-          visible={modalOpen}
+          open={modalOpen}
           title={editingGif ? 'Edit Gif' : 'Add New Gif'}
           onCancel={handleCloseModal}
           onOk={handleSubmit}

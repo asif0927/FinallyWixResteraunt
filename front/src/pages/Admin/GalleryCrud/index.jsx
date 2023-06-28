@@ -218,7 +218,7 @@ const GalleryCRUD = () => {
         <Table columns={columns} dataSource={gallerys} />
 
         <Modal
-          visible={modalOpen}
+          open={modalOpen}
           title={editingGallery ? 'Edit Gallery' : 'Add New Gallery'}
           onCancel={handleCloseModal}
           onOk={handleSubmit}

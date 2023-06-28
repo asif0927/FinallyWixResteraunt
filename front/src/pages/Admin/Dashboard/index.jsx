@@ -121,7 +121,7 @@ const Index = () => {
         <Table columns={columns} dataSource={logos} />
 
         <Modal
-          visible={modalOpen}
+          open={modalOpen}
           title={editingLogo ? 'Edit Logo' : 'Add New Logo'}
           onCancel={handleCloseModal}
           onOk={handleSubmit}
