@@ -1,0 +1,6 @@
+.img{
+    height: 1000px!important;
+    object-fit: cover!important;
+    background-attachment: fixed; 
+    filter: grayscale(80%);
+}

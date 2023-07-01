@@ -7,6 +7,8 @@ reservation_router.post('/', reservationController.createReservation);
 
 reservation_router.get('/', reservationController.getReservations);
 
+reservation_router.put('/:id', reservationController.editReservation);
+
 reservation_router.put('/:id/accept', reservationController.acceptReservation);
 
 reservation_router.put('/:id/reject', reservationController.rejectReservation);

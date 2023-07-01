@@ -18,6 +18,30 @@ exports.createReservation = async (req, res) => {
   }
 };
 
+exports.editReservation = async (req, res) => {
+  try {
+    const reservationId = req.params.id;
+    const { partySize, date, time, email } = req.body;
+
+    const updatedReservation = await Reservation.findByIdAndUpdate(
+      reservationId,
+      { partySize, date, time, email },
+      { new: true }
+    );
+
+    if (!updatedReservation) {
+      return res.status(404).json({ message: 'Reservation not found' });
+    }
+
+    sendEmail(email, 'Reservation Updated', 'Your reservation has been successfully updated.');
+
+    res.json(updatedReservation);
+  } catch (error) {
+    console.error('Failed to edit reservation:', error);
+    res.status(500).json({ message: 'Failed to edit reservation' });
+  }
+};
+
 
 exports.getReservations = async (req, res) => {
   try {

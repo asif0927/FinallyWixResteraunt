@@ -59,7 +59,7 @@ const Contact = () => {
           phone: phone,
           message: message,
         },
-        'YelTWmhLiKDWSgfqB'
+        '8ORQPdyfOfVQRCtC6'
       );
   
       toast.success('Email sent');

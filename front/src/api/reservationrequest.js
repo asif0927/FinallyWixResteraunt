@@ -11,6 +11,19 @@ export const createReservation = async (reservationData) => {
   }
 };
 
+export const editReservation = async (reservationId, updatedData) => {
+  try {
+    const response = await axios.put(`${API_BASE_URL}/reservation/${reservationId}`, updatedData);
+
+    console.log('Reservation updated:', response.data);
+    return response.data; 
+  } catch (error) {
+    console.error('Failed to update reservation:', error.message);
+    throw error; 
+  }
+};
+
+
 
 export const getReservations = async () => {
   try {

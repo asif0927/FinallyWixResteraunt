@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../../../src/index.css";
+/*import "../../../src/index.css";*/
+import style from "./index.module.css";
 import {  getAllSteakes} from "../../api/steakrequest";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -27,7 +28,7 @@ const Index = () => {
                   <SwiperSlide key={item._id}>
                     <div className="slide-content">
                 <img
-                  className="slide-image"
+                  className={style.img}
                   src={item.url}
                   alt={item.title}
                 />
