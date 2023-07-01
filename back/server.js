@@ -46,50 +46,8 @@ app.use('/api/foods',router.food);
 
 
 
-/*const nodemailer = require('nodemailer');
 
 
-
-// E-posta gönderme endpoint'i
-
-
-app.post('/api/send-email', async (req, res) => {
-  try {
-    const { name, email, phone, message } = req.body; 
-    
-
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.elasticemail.com',
-      port: 2525,
-      secure: true,
-      auth: {
-        user: 'haqverdizadeasif177@gmail.com',
-        pass: '4E18FEC0A030B8221AAC03534281FCE9AA27',
-      },
-    });
-    
-    const mailOptions = {
-      from: email,
-      to: 'haqverdizadeasif177@gmail.com',
-      subject: 'Contact Form Message',
-      html: `
-        <h3>Contact Form Message</h3>
-        <p>Name: ${name}</p>
-        <p>Email: ${email}</p>
-        <p>Phone: ${phone}</p>
-        <p>Message: ${message}</p>
-      `,
-    };
-    
-    const info = await transporter.sendMail(mailOptions);
-    console.log('E-mail sent:', info.response);
-    
-    res.status(200).json({ success: true });
-  } catch (error) {
-    console.error('Failed to send e-mail:', error);
-    res.status(500).json({ success: false, error: 'Failed to send e-mail' });
-  }
-});*/
 
 
 

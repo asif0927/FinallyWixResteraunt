@@ -22,9 +22,9 @@ const Index = () => {
   return (
     <>
       <section className={style.section}>
-        <Typography variant="h2" component="h2" gutterBottom className={style.head}>
+        <h2 className={style.head}>
           Gallery
-        </Typography>
+        </h2>
         <Grid container spacing={2}>
           {gallerys.map((gallery) => (
             <Grid item xs={12} sm={6} md={3} lg={3} key={gallery.id} className={style.grid}>

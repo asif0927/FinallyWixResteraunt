@@ -12,6 +12,11 @@
     margin-bottom: 1.4em!important;
 
 }
+@media screen and (max-width: 700px) {
+    .head {
+      font-size: 24px;
+    }
+  }
 .grid{
     padding-left: 0!important;
     padding-top: 0!important;

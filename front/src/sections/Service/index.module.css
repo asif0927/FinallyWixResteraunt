@@ -1,9 +1,11 @@
-.header{
-    color: rgb(174, 154, 100);
-    margin-bottom: 40px;
-    font-size: 35px;
+.header {
+  color: rgb(174, 154, 100);
+  margin-bottom: 40px;
+  font-size: 35px;
+  white-space: normal; /* Eski düzenlemede "nowrap" kullanmıştık, tekrar "normal" olarak değiştirin */
 }
-.texts{
+
+.texts {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,7 +14,19 @@
   text-align: center;
   color: rgb(174, 154, 100);
   width: 100%;
+  overflow-wrap: break-word; /* Kelimeleri satır sonunda kırmak için */
 }
-.content{
-    position: relative;
+
+.content {
+  position: relative;
+  height: 100%;
+  display: flex; /* İçeriği dikey yönde hizalamak için */
+  flex-direction: column; /* İçeriği dikey yönde hizalamak için */
+  justify-content: center; /* İçeriği dikey ortalamak için */
+}
+
+@media screen and (max-width: 901px) {
+  .header{
+    font-size: 22px;
+  }
 }

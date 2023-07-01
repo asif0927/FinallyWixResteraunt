@@ -5,9 +5,9 @@ import { getAllWorkTimes } from '../../api/worktimerequest';
 import style from './index.module.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-import axios from 'axios';
 import emailjs from 'emailjs-com';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -46,29 +46,30 @@ const Contact = () => {
 
     fetchWorkTimes();
   }, []);
-
-
-  const sendEmail = async (name, email, phone, message) => {
+  const sendEmail = async () => {
     try {
       await emailjs.send(
-        'service_589vex6', 
-        'template_ga41fpf', 
+        'service_bdjzy8g',
+        'template_r24938f',
         {
+          from_name: name,
+          from_email: email,
           name: name,
           email: email,
           phone: phone,
-          message: message
+          message: message,
         },
         'YelTWmhLiKDWSgfqB'
       );
   
-      toast.success('email sent');
-      console.log('E-posta gönderildi!');
+      toast.success('Email sent');
+      console.log('Email sent successfully!');
     } catch (error) {
-      console.error('E-posta gönderme hatası:', error);
-      toast.error('email not sent');
+      console.error('Failed to send email:', error);
+      toast.error('Failed to send email');
     }
   };
+  
   
   
   
@@ -195,6 +196,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <ToastContainer/>
     </>
   );
 };

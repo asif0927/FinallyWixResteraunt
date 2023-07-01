@@ -10,11 +10,14 @@ exports.getFoods = async (req, res) => {
   }
 };
 
+
+
+
 exports.createFood = async (req, res) => {
   try {
-    const { name, price, img, description, categoryName } = req.body;
+    const { name, price, img, description, category } = req.body;
 
-    const categoryObj = await Category.findOne({ name: categoryName });
+    const categoryObj = await Category.findOne({ name: category });
 
     if (!categoryObj) {
       return res.status(400).json({ error: 'Invalid category' });
@@ -31,9 +34,9 @@ exports.createFood = async (req, res) => {
 exports.updateFood = async (req, res) => {
   try {
     const foodId = req.params.id;
-    const { name, price, img, description, categoryName } = req.body;
+    const { name, price, img, description, category} = req.body;
 
-    const categoryObj = await Category.findOne({ name: categoryName });
+    const categoryObj = await Category.findOne({ name: category });
 
     if (!categoryObj) {
       return res.status(400).json({ error: 'Invalid category' });

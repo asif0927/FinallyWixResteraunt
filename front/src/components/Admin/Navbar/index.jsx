@@ -17,6 +17,7 @@ import AddAlarmIcon from '@mui/icons-material/AddAlarm';
 import PersonIcon from '@mui/icons-material/Person';
 import GifIcon from '@mui/icons-material/Gif';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import CategoryIcon from '@mui/icons-material/Category';
 const Sidebar = styled(Drawer)(({ theme }) => ({
   width: '25%', 
   flexShrink: 0,
@@ -54,7 +55,8 @@ const AdminSidebar = () => {
     {title:'Subscribers',path:'/admin/subscribers',icon:<PersonIcon/>},
     {title:'Reservation',path:'/admin/reservations',icon:<AddAlarmIcon/>},
     {title:'GifCrud',path:'/admin/gifcrud',icon:<GifIcon/>},
-    {title:'CategoryCrud',path:'/admin/categorycrud',icon:<MenuBookIcon/>},
+    {title:'CategoryCrud',path:'/admin/categorycrud',icon:<CategoryIcon/>},
+    {title:'MenuCrud',path:'/admin/menucrud',icon:<MenuBookIcon/>}
   ];
 
   return (

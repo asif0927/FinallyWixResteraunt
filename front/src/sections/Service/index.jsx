@@ -4,7 +4,7 @@ import style from "./index.module.css";
 import { getAllService } from "../../api/servicerequest";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -60,12 +60,12 @@ const Index = () => {
                   <h2 className={style.header}>THE RESTAURANT</h2>
                   <Grid container spacing={2}>
                     {slide.map((item, itemIndex) => (
-                      <Grid item sm={12} md={12} lg={4} key={item._id}>
-                        <Typography variant="h2"  style={{marginBottom:"15px"}}> {formatServiceNumber(index * 3 + itemIndex + 1)}{" "}</Typography>
-                        <Typography variant="body"  style={{marginBottom:"15px"}}>
+                      <Grid item sm={12} md={12} lg={4} key={item._id} spacing={2} justifyContent="center">
+                       <h4 > {formatServiceNumber(index * 3 + itemIndex + 1)}{" "}</h4>
+                        <p variant="body"  >
                           {item.title}
-                        </Typography>
-                        <Typography variant="body1" style={{marginTop:"15px"}}>{item.desc}</Typography>
+                        </p>
+                        <p >{item.desc}</p>
                       </Grid>
                     ))}
                   </Grid>
